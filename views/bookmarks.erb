@@ -9,7 +9,7 @@
     <div>
       <ul>
         <% @bookmarks.each do |bookmark| %>
-        <li><a href="<%= bookmark[1] %>"><%= "#{bookmark[0]}"%></a></li>
+        <li><<a href="<%= bookmark.url %>"><%= bookmark.name %></a></li>
         <% end %>
       </ul>
     </div>

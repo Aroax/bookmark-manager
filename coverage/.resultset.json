@@ -54,41 +54,6 @@
           null
         ]
       },
-      "/Users/arranoakes/Projects/Ruby/weekly-challenges/bookmark-manager/spec/units/bookmark_list_spec.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/arranoakes/Projects/Ruby/weekly-challenges/bookmark-manager/lib/bookmark_list.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/arranoakes/Projects/Ruby/weekly-challenges/bookmark-manager/spec/units/bookmark_spec.rb": {
         "lines": [
           1,
@@ -96,26 +61,10 @@
           1,
           2,
           2,
-          1,
           null,
           null,
           null,
           null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
           null,
           null,
           null,
@@ -123,12 +72,40 @@
           1,
           1,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1624458800
+    "timestamp": 1624462303
   }
 }

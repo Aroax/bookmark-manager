@@ -20,6 +20,20 @@
           null
         ]
       },
+      "/Users/arranoakes/Projects/Ruby/weekly-challenges/bookmark-manager/spec/features/delete_bookmark_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/arranoakes/Projects/Ruby/weekly-challenges/bookmark-manager/spec/features/test_spec.rb": {
         "lines": [
           1,
@@ -59,8 +73,8 @@
           1,
           null,
           1,
-          2,
-          2,
+          3,
+          3,
           null,
           null,
           null,
@@ -100,12 +114,23 @@
           1,
           1,
           null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1624464046
+    "timestamp": 1624472480
   }
 }

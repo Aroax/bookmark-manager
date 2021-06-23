@@ -44,4 +44,15 @@ describe Bookmark do
 
   end
 
+  it 'can delete a bookmark' do
+    Bookmark.add(name, url)
+    bookmarks = Bookmark.show_bookmarks
+    expect(bookmarks.first.name).to eq "#{name}"
+    expect(bookmarks.first.url).to eq "#{url}"
+    id = bookmarks.first.id
+    Bookmark.delete(id)
+    bookmarks = Bookmark.show_bookmarks
+    expect(bookmarks.first).to be nil
+  end
+
 end

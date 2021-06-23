@@ -99,3 +99,11 @@ Browser->>-User: sees updated bookmark list
 ```
 
 <img src="/images/User-Story-2_MVC.jpeg">
+
+## User Story 2
+
+```
+As a user,
+So that I may keep a concise and relevant collection of resources
+I would like to be able to delete a new bookmark
+```

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="/bookmarks/<%= @bookmark.id %>" method="post">
+      <input type='hidden' name='_method' value='PATCH'/>
+      <input type="text" name="name" value="<%= @bookmark.name %>">
+      <input type="text" name="url" value="<%= @bookmark.url %>">
+      <input type="submit" name="Submit" value="submit">
+    </form>
+  </body>
+</html>

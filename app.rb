@@ -14,7 +14,7 @@ class BookmarkManager < Sinatra::Base
 
   get "/bookmarks" do
     @bookmarks = Bookmark.show_bookmarks
-    @last_deleted = session[:last_deleted]
+    # @last_deleted = session[:last_deleted]
     erb :bookmarks
   end
 
@@ -28,12 +28,21 @@ class BookmarkManager < Sinatra::Base
   end
 
   delete "/bookmarks/:id" do
-    p params
     # session[:last_deleted] = Bookmark.find(params[:id])
     Bookmark.delete(params[:id])
     #  connection = PG.connect(dbname: 'bookmark_manager_test')
     # connection.exec_params("DELETE FROM bookmarks WHERE id = $1", [params[:id]])
     redirect '/bookmarks'
+  end
+
+  get "/bookmarks/:id/update" do
+    @bookmark = Bookmark.find(params[:id])
+    erb :update_form
+  end
+
+  patch "/bookmarks/:id" do
+    Bookmark.update(id: params[:id], name: params[:name], url: params[:url])
+    redirect('/bookmarks')
   end
 
   run! if app_file == $0

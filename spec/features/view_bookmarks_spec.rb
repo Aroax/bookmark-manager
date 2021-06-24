@@ -5,6 +5,7 @@ feature "Viewing bookmarks" do
     visit("/bookmarks")
     expect(page).to have_content "Bookmarks:"
   end
+  
   scenario "seeing list of bookmarks" do
     connection = PG.connect(dbname: "bookmark_manager_test")
 

@@ -29,9 +29,16 @@ class Bookmark
 
   def self.find(id)
     self.environment
-    @connection.exec_params("SELECT * FROM bookmarks WHERE id = $1;", [id])
+    result = @connection.exec_params("SELECT * FROM bookmarks WHERE id = $1;", [id])
+    Bookmark.new(id: result[0]['id'], name: result[0]['name'], url: result[0]['url'])
   end
 
+  def self.update(id:, name: ,url:)
+    self.environment
+    # @connection.exec_params("UPDATE bookmarks SET name = '$1', url = '$2' WHERE id = '$3';", [name, url, id])
+    result = @connection.exec("UPDATE bookmarks SET url = '#{url}', name = '#{name}' WHERE id = '#{id}' RETURNING id, url, name;")
+    Bookmark.new(id: result[0]['id'], name: result[0]['name'], url: result[0]['url'])
+  end
 
   private
 

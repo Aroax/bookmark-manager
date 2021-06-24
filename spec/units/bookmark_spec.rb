@@ -3,6 +3,7 @@ require "bookmark"
 describe Bookmark do
   let(:name) { double :name }
   let(:url) { double :url }
+  let(:updated_url) { double :updated_url }
   # subject(:bookmark) { described_class.new }
   # it "has a name" do
   #   expect(bookmark.name).to eq name
@@ -47,12 +48,45 @@ describe Bookmark do
   it 'can delete a bookmark' do
     Bookmark.add(name, url)
     bookmarks = Bookmark.show_bookmarks
+
     expect(bookmarks.first.name).to eq "#{name}"
     expect(bookmarks.first.url).to eq "#{url}"
+
     id = bookmarks.first.id
+
     Bookmark.delete(id)
     bookmarks = Bookmark.show_bookmarks
+
     expect(bookmarks.first).to be nil
   end
+
+  # it 'can find a bookmark' do
+  #
+  # end
+
+  it 'can update a bookmark' do
+    # Bookmark.add(name, url)
+    # bookmarks = Bookmark.show_bookmarks
+    #
+    # # expect(bookmarks.first.name).to eq name
+    # # expect(bookmarks.first.url).to eq url
+    #
+    # id = bookmarks.first.id
+    #
+    # Bookmark.update(id: id, name: name, url: updated_url)
+    # bookmarks = Bookmark.show_bookmarks
+    #
+    # expect(bookmarks.first.url).to eq updated_url
+
+    bookmark = Bookmark.add('Makers Academy', 'http://www.makersacademy.com')
+    updated_bookmark = Bookmark.update(id: bookmark.id, url: 'http://www.snakersacademy.com', name: 'Snakers Academy')
+
+    expect(updated_bookmark).to be_a Bookmark
+    expect(updated_bookmark.id).to eq bookmark.id
+    expect(updated_bookmark.name).to eq 'Snakers Academy'
+    expect(updated_bookmark.url).to eq 'http://www.snakersacademy.com'
+  end
+
+
 
 end

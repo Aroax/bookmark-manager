@@ -12,7 +12,10 @@
         <li class="bookmark"><a href="<%= bookmark.url %>"><%= bookmark.name %></a>  |
           <form action='/bookmarks/<%= bookmark.id %>' method='post'>
             <input type='hidden' name='_method' value='DELETE'/>
-            <input id="Delete" name="Delete" type="image" src="images/delete_cross.png" height='25' width='25' value="Delete" alt="delete" />
+            <input id="Delete" name="Delete" type="image" src="images/delete_cross.png" height='25' width='25' value="Delete" alt="delete" title="delete bookmark"/>
+          </form>
+          <form action="/bookmarks/<%= bookmark.id %>/update" method='get'>
+            <input id="Update" name="Update" type="image" src="images/update_icon.png" height='25' width='25' value="Update" alt="update" title="modify bookmark"/>
           </form>
         </li>
         <% end %>

@@ -1,9 +1,12 @@
 require "sinatra/base"
 require "sinatra/reloader"
+require "sinatra/flash"
 require_relative "lib/bookmark"
+require "uri"
 # require_relative "lib/bookmark_list"
 
 class BookmarkManager < Sinatra::Base
+  register Sinatra::Flash
   enable :sessions, :method_override
 
 
@@ -19,11 +22,17 @@ class BookmarkManager < Sinatra::Base
   end
 
   get "/bookmarks/new" do
+    # @flash = flash[:notice]
     erb :add_bookmark
   end
 
   post "/bookmarks/add" do
-    Bookmark.add(params[:name], params[:url])
+    if params[:url] =~ /\A#{URI::regexp(['http', 'https'])}\z/
+      Bookmark.add(params[:name], params[:url])
+    else
+      flash[:notice] = "Please enter a valid URL"
+    end
+
     redirect('/bookmarks')
   end
 
